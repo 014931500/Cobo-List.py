@@ -1,0 +1,33 @@
+import random
+import requests
+from ctypes import windll
+from requests import request
+from requests import get
+from colorama import Fore,init,Style
+xdx = 'Insta: 014931500'
+windll.kernel32.SetConsoleTitleW(f'[  {xdx} ]')
+
+
+
+
+SR,SB,SRB = Style.RESET_ALL,Style.BRIGHT,Style.RESET_ALL+Style.BRIGHT
+FG,FC,FR,FY,FB = Fore.GREEN,Fore.CYAN,Fore.RED,Fore.YELLOW,Fore.BLUE
+
+ # My Account in Instagram @014931500 
+def banner():
+    ban = get(url="https://pastebin.com/raw/wTu1UQcf").text
+    print(FB+ban+SRB+'\n     ComBo-List By Muath Al-onzi ')
+banner()
+
+
+U = open('user.txt','r').read().splitlines()
+P = open('Password.txt', 'r').read().splitlines()
+count = 0
+for user in U:
+    for password in P:
+        merge = (user+':'+password+'\n')
+        combo = open('Combo.txt','a')
+        combo.write(merge)
+        count +=1
+        windll.kernel32.SetConsoleTitleW(f'Done[{count}]')
+        print('     Time .. ');int(count)
